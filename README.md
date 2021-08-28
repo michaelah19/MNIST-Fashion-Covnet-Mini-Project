@@ -25,6 +25,7 @@ The layers consist of:
 5. Finally the output layer with 10 nodes usign Softmax since every category is mutually exclusive (This means that the sum of the probabilities of all possible outcomes should add up to 1 or in simple terms 1 image can only have 1 category).
 
 Below is a summary of the covnet architecture.:
+
 ![Cant load image](results/CNN_model.png)
 
 The process was iterated a few times to fine tune some of the hyperparameters.
