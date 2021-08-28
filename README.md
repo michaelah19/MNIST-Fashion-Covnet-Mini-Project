@@ -24,19 +24,29 @@ The layers consist of:
 4. A Dense layer with 32 hidden nodes with Relu activation
 5. Finally the output layer with 10 nodes usign Softmax since every category is mutually exclusive (This means that the sum of the probabilities of all possible outcomes should add up to 1 or in simple terms 1 image can only have 1 category).
 
-Below is a summary of the covnet:
+Below is a summary of the covnet architecture.:
 ![Cant load image](results/CNN_model.png)
+
+The process was iterated a few times to fine tune some of the hyperparameters.
+I found that the learning rate was better at 0.02 with a SGD.
+Just based trial and error, fixing the epoch at 30 was ideal as the cost was starting to flatten
+Anything higher seems to be overfitting. And anything below isn't as accurate.
+(Note for simplciity sake, the neurons or number of layers weren't tweaked with, but they are hyperparameters as well).
+
+![Cant load image](results/processing.png)
+
+As shown in the figure, the accuracy of the training set and of the validating set are similar.
+Thus it shows that there isn't too much overfitting involved.
+The Losses were also starting to flatten/converge to a horizontal line showing that 30 epoch is fine.
 
 # Results
 
-Below are a few screenshot showing some of the use cases of the program
+The model was tested on the testing set producing an accuracy of 0.8871 OR 88.71%
+By itself it's not super intuitive, as such i grabbed a small subset of the test set to show what their predictions are like (along their probability) and point out some wrong predictions from the model.
 
-The help toggle as well as the current options
-![](screenshots/help.png)
+![](results/Results.png)
 
-An example run
-![](screenshots/result1.png)
-![](screenshots/result2.png)
+A key observation is that the model seemed to struggle with the shoes category (sandles, boots..etc).
 
 To access the model:
 [model.h5](results/Keras_CNN_model.h5)
