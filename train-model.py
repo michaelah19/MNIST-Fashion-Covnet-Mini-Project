@@ -41,10 +41,14 @@ model.compile(loss = "sparse_categorical_crossentropy",                 # Generi
 # Creating model
 trained_model = model.fit(x=x_train, 
                           y=y_train, 
-                          epochs = 30, 
+                          epochs = 30,                                  
+                          # Just based trial and error, 30 seemed to be fine as it's about to converge. 
+                          # Anything higher seems to be overfitting. And anything below isn't as accurate.
                           validation_data=(x_valid, y_valid))
 
 
+# %% Result
+print(model.evaluate(x_test,y_test))
 
 # %% Saving Figures and Exporting model
 
